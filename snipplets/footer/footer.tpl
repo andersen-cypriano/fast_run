@@ -109,6 +109,14 @@
 						{% include "snipplets/social/social-links.tpl" %}
 					</div>
 				{% endif %}
+				<div class="content-troca col-md">
+					<a href="https://fastrun.troque.app.br/" target="_blank">
+						<div class="icone">
+							<img src="{{ 'images/trocafacil.svg' | static_url }}" class="custom-seal-img lazyload"/>
+						</div>
+						<span>Troca Fácil</span>
+					</a>
+				</div>
 			</div>
 		</div>
 

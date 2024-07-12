@@ -3349,3 +3349,30 @@ DOMContentLoaded.addEventOrExecute(() => {
     {% endif %}
 
 });
+
+function updateImageVariantColor () {
+    const data = JSON.parse(document.querySelector("#single-product").getAttribute('data-variants'));
+  
+    // Use a Set to track unique option0 values
+    const uniqueOption0Set = new Set();
+    const uniqueData = data.filter(item => {
+      if (uniqueOption0Set.has(item.option0)) {
+        return false;
+      } else {
+        uniqueOption0Set.add(item.option0);
+        return true;
+      }
+    });
+  
+    // Loop through the unique data and update the background image
+    uniqueData.forEach(element => {
+      const selector = `[data-variation-id="0"] > a[data-option="${element.option0}"]`;
+      const optionElement = document.querySelector(selector);
+      if (optionElement) {
+        optionElement.style.cssText = `background: transparent url('${element.image_url}') no-repeat center center;background-size: 90%;width: 100px;height: 100px; font-size: 0!important;`;
+      }
+    });
+}
+window.addEventListener("load", (event) => {
+    document.querySelector("#single-product") ? updateImageVariantColor() : null;
+});

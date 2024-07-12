@@ -1975,3 +1975,70 @@ footer.section-footer-home {
 .display-when-content-ready{
   display: block!important;
 }
+
+div[class="nav-desktop"] {
+  > ul.nav-desktop-list {
+    > li[class*="item-with-subitems"] {
+      position: relative;
+      > .desktop-dropdown {
+        position: absolute;
+        width: 100%;
+        padding: 15px 0;
+        background-color: transparent;
+        > .desktop-dropdown-container {
+          background-color: #FFF!important;
+          padding-top: 13px;
+          > ul.desktop-list-subitems  {
+            display: flex;
+            flex-direction: column;
+            > li.item-with-subitems {
+              > .nav-item-container {
+                > a.nav-list-link {
+                  font-weight: 800;
+                }
+              }
+              ul.list-subitems {
+                padding-left: 10px;
+              }
+            }
+            li:not(.item-with-subitems) {
+              > a {
+                font-weight: 800;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.content-troca {
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid #FFF;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all .3s ease;
+    &:hover {
+      background-color: #FFF;
+      span {
+        color: #000;
+      }
+    }
+    .icone {
+      width: 30px;
+      height: 30px;
+      background: #FFF;
+      border-radius: 10px;
+      padding: 4px;
+    }
+    span {
+      color: #FFF;
+      font-size: 16px;
+    }
+  }
+}
